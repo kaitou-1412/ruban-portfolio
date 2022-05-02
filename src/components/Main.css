@@ -1,0 +1,6 @@
+.main-container {
+	margin-top: 69px;
+	background-color: antiquewhite;
+	padding: 20px;
+	flex-grow: 1;
+}
