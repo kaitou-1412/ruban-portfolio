@@ -1,6 +1,7 @@
 .footer-container {
-	background-color: aquamarine;
+	background-color: #18191a;
 	padding: 20px;
 	text-align: center;
 	justify-self: flex-end;
+	color: #e4e6eb;
 }
