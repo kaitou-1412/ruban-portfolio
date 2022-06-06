@@ -1,6 +1,6 @@
 .header-container {
-	/* background-color: #18191a; */
-	background-color: #010101;
+	background-color: #18191a;
+	/* background-color: #010101; */
 	padding: 20px;
 	text-align: center;
 	z-index: 12;
@@ -28,6 +28,15 @@
 	color: #e4e6eb;
 }
 
+.nav > .tab-active {
+	/* color: green; */
+	color: #007399;
+}
+
+.nav > .tab-inactive {
+	color: #e4e6eb;
+}
+
 .socials {
 	margin-left: 10px;
 	justify-self: flex-end;
@@ -37,4 +46,5 @@
 
 .social > a {
 	color: #e4e6eb;
+	font-size: 20px;
 }

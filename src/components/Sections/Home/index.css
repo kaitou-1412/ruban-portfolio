@@ -30,7 +30,8 @@
 }
 
 .my-message {
-	color: green;
+	/* color: green; */
+	color: #006080;
 	font-size: 45px;
 	font-family: 'Black Han Sans', sans-serif;
 }

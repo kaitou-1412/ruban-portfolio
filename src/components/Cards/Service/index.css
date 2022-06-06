@@ -1,0 +1,30 @@
+.service-card-container {
+	height: 180px;
+	width: 300px;
+	display: flex;
+	margin: 20px;
+	padding: 20px;
+	flex-direction: column;
+	background-color: #18191a;
+	border-radius: 8%;
+}
+
+.service-card-logo {
+	color: #e4e6eb;
+	font-size: 50px;
+	text-align: center;
+	/* color: green; */
+	color: #006080;
+	margin: 10px 0;
+}
+
+.service-card-title {
+	font-size: 18px;
+	text-align: center;
+	font-family: 'Black Han Sans', sans-serif;
+}
+
+.service-card-description {
+	margin-top: 10px;
+	text-align: center;
+}

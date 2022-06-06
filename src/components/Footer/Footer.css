@@ -1,7 +1,29 @@
 .footer-container {
 	background-color: #18191a;
-	padding: 20px;
+	/* background-color: #010101; */
+	padding: 10px;
 	text-align: center;
 	justify-self: flex-end;
 	color: #e4e6eb;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer-contacts {
+	display: flex;
+}
+
+.footer-contact {
+	margin: 10px;
+	font-size: 15px;
+}
+
+.footer-contact > a {
+	color: #e4e6eb;
+}
+
+.footer-copyright {
+	font-size: 10px;
+	color: grey;
 }

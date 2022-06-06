@@ -8,7 +8,6 @@ const TEXTS = [
     "Software Engineer",
     "Full Stack Developer",
     "Eager to Learn",
-    //"Parul's Lover"
 ];
   
 

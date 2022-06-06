@@ -1,0 +1,59 @@
+.project-card-container-hidden {
+	height: 270px;
+	width: 29%;
+	display: flex;
+	margin: 1.6%;
+	visibility: hidden;
+}
+
+.project-card-container {
+	height: 270px;
+	width: 29%;
+	display: flex;
+	margin: 1.6%;
+	flex-direction: column;
+	/* border: 5px solid white; */
+	border: 5px solid #006080;
+	border-radius: 8%;
+}
+
+.project-card-image {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.project-image {
+	max-height: 100%;
+	max-width: 100%;
+	border-radius: 8% 8% 0 0;
+}
+
+.project-card-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px;
+}
+
+.project-title {
+	font-size: 18px;
+	font-family: 'Black Han Sans', sans-serif;
+}
+
+.project-links {
+	display: flex;
+	flex-direction: column;
+}
+
+.project-link {
+	margin: 2px 5px;
+}
+
+.project-link > a {
+	color: #e4e6eb;
+	font-size: 20px;
+}
+
+.github-icon {
+	margin-left: 8px;
+}
