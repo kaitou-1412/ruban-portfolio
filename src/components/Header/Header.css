@@ -48,3 +48,9 @@
 	color: #e4e6eb;
 	font-size: 20px;
 }
+
+/* @media (max-width: 420px) {
+	.tab-hide {
+		display: none;
+	}
+} */

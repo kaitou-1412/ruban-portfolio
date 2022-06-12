@@ -24,7 +24,7 @@ const Contact = () => {
                 console.log('SUCCESS!', response.status, response.text);
                 toast.success('Email sent successfully !!!', {
                     position: "top-center",
-                    theme: "colored",
+                    theme: "light",
                     autoClose: 5000,
                     hideProgressBar: false,
                     closeOnClick: true,
@@ -44,7 +44,7 @@ const Contact = () => {
         <div className="contact-container">
             <ToastContainer
                 position="top-center"
-                theme="colored"
+                theme="light"
                 autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}

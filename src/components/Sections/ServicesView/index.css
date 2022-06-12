@@ -21,3 +21,34 @@
 .services-view {
 	display: flex;
 }
+@media (max-width: 420px) {
+	.services-view-container {
+		background-color: #010101;
+		height: 900px;
+		color: #e4e6eb;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0px;
+		padding-left: 12%;
+		padding-top: 5%;
+		/* display: none; */
+	}
+
+	.sevices-view-title {
+		font-size: 20px;
+		font-family: 'Black Han Sans', sans-serif;
+	}
+
+	.services-view-description {
+		margin-bottom: 2%;
+		width: 70%;
+		text-align: justify;
+	}
+
+	.services-view {
+		/* border: 1px solid red; */
+		display: flex;
+		flex-direction: column;
+	}
+}

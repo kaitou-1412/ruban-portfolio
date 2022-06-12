@@ -60,7 +60,7 @@ const Header = () => {
       <div className="navbar-container">
         <div className="nav"><a href="#home" className={ homeActive ? "tab-active" : "tab-inactive" }>Home</a></div>
         <div className="nav"><a href="#about" className={ aboutActive ? "tab-active" : "tab-inactive" }>About</a></div>
-        <div className="nav"><a href="#services" className={ servicesActive ? "tab-active" : "tab-inactive" }>Services</a></div>
+        <div className="nav"><a href="#services" className={ servicesActive ? "tab-active tab-hide" : "tab-inactive tab-hide" }>Services</a></div>
         <div className="nav"><a href="#projects" className={ projectsActive ? "tab-active" : "tab-inactive" }>Projects</a></div>
         <div className="nav"><a href="#contact" className={ contactActive ? "tab-active" : "tab-inactive" }>Contact</a></div>
       </div>
