@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Header.css';
+import { ResponsiveNavbar } from 'react-hamburger-menus';
+import "../../../node_modules/react-hamburger-menus/dist/style.css";
 
 const Header = () => {
 
@@ -9,6 +11,7 @@ const Header = () => {
   const [servicesActive, setServicesActive] = useState(false)
   const [projectsActive, setProjectsActive] = useState(false)
   const [contactActive, setContactActive] = useState(false)
+  const [toggleNavbar, setToggleNavbar] = useState<boolean | undefined>(undefined)
 
   const listenScrollEvent = (event: any) => {
     if (window.scrollY < 400) {
@@ -51,11 +54,51 @@ const Header = () => {
 
   useEffect(() => { 
     window.addEventListener('scroll', listenScrollEvent)
-    console.log(tabColor)
-  })
+  }, [toggleNavbar])
+
+  const closeNavbar = (event: any) => {
+    setToggleNavbar(false)
+    event.stopPropagation()
+  }
+
+  const activateNavbar = () => {
+    setToggleNavbar(!toggleNavbar)
+  }
 
   return (
     <div className="header-container">
+      <div className="mobile-navbar">
+        <ResponsiveNavbar
+          id="responsive-navbar-component"
+          logo={<p className="mobile-logo">RS</p>}
+          iconColor="#e4e6eb"
+          animationDelay={0.5}
+          zIndex={100000}
+          toggleNavigationBarSmallValue={toggleNavbar}
+          toggleNavigationBarSmallFunction={activateNavbar}
+          styles={{
+            navigation: {
+              fontFamily: "Cabin, sans-serif",
+              color: "#e4e6eb"
+            },
+            navigationBarSmall: {
+              color: "#e4e6eb",
+              backgroundColor: "#18191a"
+            },
+            navigationCardSmall: {
+              backgroundColor: "#18191a"
+            },
+          }}
+        >
+          <ul style={{ marginRight: "10px" }}>
+            <li><a onClick={(event) => closeNavbar(event)} href="#home">Home</a></li>
+            <li><a onClick={(event) => closeNavbar(event)} href="#about">About</a></li>
+            <li><a onClick={(event) => closeNavbar(event)} href="#services">Services</a></li>
+            <li><a onClick={(event) => closeNavbar(event)} href="#projects">Projects</a></li>
+            <li><a onClick={(event) => closeNavbar(event)} href="#contact">Contact</a></li>
+          </ul>
+        </ResponsiveNavbar>
+      </div>
       <div className="logo">RS</div>
       <div className="navbar-container">
         <div className="nav"><a href="#home" className={ homeActive ? "tab-active" : "tab-inactive" }>Home</a></div>

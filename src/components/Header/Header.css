@@ -54,3 +54,40 @@
 		display: none;
 	}
 } */
+
+@media (min-width: 420px) {
+	.mobile-navbar {
+		display: none;
+	}
+}
+
+@media (max-width: 420px) {
+	.header-container {
+		background-color: #18191a;
+		/* background-color: #010101; */
+		padding: 0px;
+		text-align: center;
+		z-index: 12;
+		position: fixed;
+		width: 100%;
+		display: flex;
+		align-content: space-around;
+	}
+	.logo,
+	.navbar-container,
+	.socials {
+		display: none;
+	}
+	.mobile-navbar {
+		height: 30px;
+		/* color: white; */
+	}
+	.mobile-logo {
+		font-size: 25px;
+		margin-top: 0px;
+	}
+	li > a {
+		text-decoration: none;
+		color: #e4e6eb;
+	}
+}
