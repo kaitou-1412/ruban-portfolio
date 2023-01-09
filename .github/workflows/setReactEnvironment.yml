@@ -2,6 +2,7 @@ name: Set React Environment
 on: push
 jobs:
   Job1:
+    runs-on: ubuntu-latest
     steps:
     - name: set up parent workflow
       uses: ./.github/workflows/deployHPanel.yml
