@@ -1,13 +1,5 @@
 name: 🚀 Deploy website to Hostinger on push
 on:
-  workflow_call:
-    secrets:
-      PUBLIC_KEY:
-        required: true
-      SERVICE_ID:
-        required: true
-      TEMPLATE_ID:
-        required: true
   push:
     branches: [ main ]
   pull_request:
@@ -16,7 +8,6 @@ on:
 jobs:
   web-deploy:
     name: 🎉 Deploy
-    environment: React
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
@@ -29,9 +20,9 @@ jobs:
         node-version: 18
     - name: 🔨 Build Project
       run: |
-        REACT_APP_EMAILJS_PUBLIC_KEY='${{secrets.PUBLIC_KEY}}'
-        REACT_APP_SERVICE_ID='${{secrets.SERVICE_ID}}'
-        REACT_APP_TEMPLATE_ID='${{secrets.TEMPLATE_ID}}'
+        REACT_APP_EMAILJS_PUBLIC_KEY='${{secrets.EMAILJS_PUBLIC_KEY}}'
+        REACT_APP_SERVICE_ID='${{secrets.EMAILJS_SERVICE_ID}}'
+        REACT_APP_TEMPLATE_ID='${{secrets.EMAILJS_TEMPLATE_ID}}'
         npm install
         CI=false npm run build
     
