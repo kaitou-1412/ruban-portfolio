@@ -11,8 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing env
-        run: |
-        echo "${{secrets.EMAILJS_PUBLIC_KEY}}"
+        run: echo "${{secrets.EMAILJS_PUBLIC_KEY}}"
     # - name: 🚚 Get latest code
     #   uses: actions/checkout@v3
     #   with:
