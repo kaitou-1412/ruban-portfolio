@@ -11,12 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Testing env
+        env:
+          EMAILJS_PUBLIC_KEY: ${{secrets.EMAILJS_PUBLIC_KEY}}  
+          EMAILJS_SERVICE_ID: ${{secrets.EMAILJS_SERVICE_ID}}  
+          EMAILJS_TEMPLATE_ID: ${{secrets.EMAILJS_TEMPLATE_ID}}  
         run: |
-        touch env.txt &&
-        echo "REACT_APP_EMAILJS_PUBLIC_KEY=${{secrets.EMAILJS_PUBLIC_KEY}}" >> env.txt &&
-        echo "REACT_APP_SERVICE_ID=${{secrets.EMAILJS_SERVICE_ID}}"  >> env.txt &&
-        echo "REACT_APP_TEMPLATE_ID=${{secrets.EMAILJS_TEMPLATE_ID}}" >> env.txt &&
-        ./.env &&
+        touch .Renviron
+        echo REACT_APP_EMAILJS_PUBLIC_KEY="$EMAILJS_PUBLIC_KEY" >> .Renviron
+        echo REACT_APP_SERVICE_ID="$EMAILJS_SERVICE_ID}}"  >> .Renviron
+        echo REACT_APP_TEMPLATE_ID="$EMAILJS_TEMPLATE_ID}}" >> .Renviron
+        echo "cat .Renviron"
+        cat .Renviron
+        echo "ls -a ."
+        ls -a .
+        echo "ls -a ${{ github.workspace }}"
+        ls -a ${{ github.workspace }}
         echo "$REACT_APP_EMAILJS_PUBLIC_KEY"
     # - name: 🚚 Get latest code
     #   uses: actions/checkout@v3
