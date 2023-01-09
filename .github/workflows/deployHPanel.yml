@@ -10,8 +10,8 @@ jobs:
     name: 🎉 Deploy
     environment: React
     env:
-      public-key: '${{secrets.REACT_APP_EMAILJS_PUBLIC_KEY}}'
-      service-id: '${{secrets.REACT_APP_SERVICE_ID}}'
+      public-key: '${{env.REACT_APP_EMAILJS_PUBLIC_KEY}}'
+      service-id: '${{React.REACT_APP_SERVICE_ID}}'
       template-id: '${{secrets.REACT_APP_TEMPLATE_ID}}'
     runs-on: ubuntu-latest
     steps:

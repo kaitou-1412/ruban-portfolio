@@ -17,7 +17,7 @@ const Contact = () => {
         const publicKey = String(process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
         const serviceID = String(process.env.REACT_APP_SERVICE_ID)
         const templateID = String(process.env.REACT_APP_TEMPLATE_ID)
-        console.log(publicKey, 'success')
+        console.log(publicKey, serviceID, templateID, 'success')
         emailjs.init(publicKey)
         emailjs.send(serviceID, templateID, templateParams)
             .then((response) => {
