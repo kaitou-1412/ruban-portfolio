@@ -55,7 +55,7 @@ const Contact = () => {
                 pauseOnHover
             />
             <div className="contact-title">Let's work together.</div>
-            <div className="contact-description">I am available for work. Connect with me using the contact form or <strong>send me an email</strong>.</div>
+            <div className="contact-description">I am available for work. Connect with me using the contact form or <strong>send me an email</strong>:</div>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <input id="name" type="text" className="input-field" name="name" placeholder="Name" />
                 <input id="subject" type="text" className="input-field" name="subject" placeholder="Subject" />
