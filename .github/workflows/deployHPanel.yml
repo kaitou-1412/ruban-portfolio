@@ -1,8 +1,10 @@
 name: 🚀 Deploy website to Hostinger on push
 on: 
   push:
-    branches: 
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 jobs:
   web-deploy:
     name: 🎉 Deploy
