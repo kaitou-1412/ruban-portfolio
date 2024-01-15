@@ -1,59 +1,59 @@
 .projects-view-container {
-	background-color: #18191a;
-	color: #e4e6eb;
-	height: 750px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 40px;
+  background-color: #18191a;
+  height: 100%;
+  color: #e4e6eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
 }
 
 .projects-view-title {
-	font-size: 40px;
-	font-family: 'Black Han Sans', sans-serif;
+  font-size: 40px;
+  font-family: "Black Han Sans", sans-serif;
 }
 
 .projects-view-description {
-	margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 .projects-view {
-	margin: 0 8%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+  margin: 0 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
 }
 
 @media (max-width: 420px) {
-	.projects-view-container {
-		background-color: #18191a;
-		color: #e4e6eb;
-		height: 1400px;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-		padding: 0px;
-		padding-left: 12%;
-	}
+  .projects-view-container {
+    background-color: #18191a;
+    color: #e4e6eb;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px;
+    padding-left: 12%;
+  }
 
-	.projects-view-title {
-		margin-top: 7%;
-		font-size: 20px;
-		font-family: 'Black Han Sans', sans-serif;
-	}
+  .projects-view-title {
+    margin-top: 7%;
+    font-size: 20px;
+    font-family: "Black Han Sans", sans-serif;
+  }
 
-	.projects-view-description {
-		margin-top: 4%;
-		margin-bottom: 2%;
-		width: 70%;
-	}
+  .projects-view-description {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    width: 70%;
+  }
 
-	.projects-view {
-		margin: 4% 8% 4% 0%;
-		display: flex;
-		flex-direction: column;
-		/* flex-wrap: wrap; */
-		justify-content: space-around;
-	}
+  .projects-view {
+    margin: 4% 8% 4% 0%;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+  }
 }
