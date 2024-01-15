@@ -13,7 +13,7 @@ const projectsData = [
     title: "Food House",
     image: String(FoodHousePic),
     github: "https://github.com/kaitou-1412/Practice/tree/main/React",
-    live: "https://jade-kangaroo-b8dcca.netlify.app",
+    live: "https://foodhouse.rubansahoo.com",
   },
   {
     title: "Order Management System",
