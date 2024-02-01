@@ -1,38 +1,34 @@
 import React from "react";
 import "./index.css";
 import Project from "../../Cards/Project";
+import YoutubePic from "../../../media/Youtube.png";
 import FoodHousePic from "../../../media/Food-House.png";
 import OMSPic from "../../../media/Mercury-OMS.png";
 import VirtualMarathonPic from "../../../media/Virtual-Marathon.png";
-import BlogAppPic from "../../../media/Blog-App.png";
 import GameOfLifePic from "../../../media/Game-of-Life.png";
 import MovieDBPic from "../../../media/MovieDB.png";
 
 const projectsData = [
+  {
+    title: "Youtube",
+    image: String(YoutubePic),
+    github: "https://github.com/kaitou-1412/Youtube",
+    live: "https://youtube.rubansahoo.com",
+  },
   {
     title: "Food House",
     image: String(FoodHousePic),
     github: "https://github.com/kaitou-1412/Practice/tree/main/React",
     live: "https://foodhouse.rubansahoo.com",
   },
-  {
-    title: "Order Management System",
-    image: String(OMSPic),
-    github: "",
-    live: "https://oms-frontend-urtjok3rza-wl.a.run.app",
-  },
+
   {
     title: "Virtual Marathon",
     image: String(VirtualMarathonPic),
-    github: "",
-    live: "https://vertualmarathon-frontend-urtjok3rza-wl.a.run.app",
+    github: "https://github.com/kaitou-1412/Virtual-Marathon",
+    live: "",
   },
-  {
-    title: "Blog App",
-    image: String(BlogAppPic),
-    github: "https://github.com/kaitou-1412/react-blog",
-    live: "https://focused-benz-36b4d0.netlify.app/",
-  },
+
   {
     title: "Game of Life",
     image: String(GameOfLifePic),
@@ -44,6 +40,12 @@ const projectsData = [
     image: String(MovieDBPic),
     github: "https://github.com/kaitou-1412/MovieDB",
     live: "https://friendly-knuth-1c2e7b.netlify.app/",
+  },
+  {
+    title: "Order Management System",
+    image: String(OMSPic),
+    github: "",
+    live: "",
   },
 ];
 
