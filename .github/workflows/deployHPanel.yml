@@ -9,22 +9,30 @@ jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    steps:   
+    steps:
       - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: ⬢ Setup Node.js 22
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - name: 🔨 Build Project    
-        run: |
-          npm install
-          CI=false REACT_APP_EMAILJS_PUBLIC_KEY=${{secrets.EMAILJS_PUBLIC_KEY}} REACT_APP_SERVICE_ID=${{secrets.EMAILJS_SERVICE_ID}} REACT_APP_TEMPLATE_ID=${{secrets.EMAILJS_TEMPLATE_ID}} npm run build
-      - name: List output files
+          node-version: 22
+          cache: pnpm
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: 🔨 Build project
+        env:
+          CI: false
+          REACT_APP_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+          REACT_APP_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          REACT_APP_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+        run: pnpm build
+      - name: 📋 List build output
         run: find build/ -print
-      - name: 📂 Sync files
+      - name: 📂 Sync files to Hostinger
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}

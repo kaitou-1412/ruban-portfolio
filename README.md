@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# ruban-portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site for Ruban Sahoo, deployed at [rubansahoo.com](https://rubansahoo.com).
 
-## Available Scripts
+Built with Create React App + TypeScript. EmailJS powers the contact form.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- **Node.js 22+** — install via [nvm](https://github.com/nvm-sh/nvm): `nvm install 22 && nvm use 22`
+- **pnpm** — managed by [Corepack](https://nodejs.org/api/corepack.html), which ships with Node. Enable once with `corepack enable`. The exact pnpm version is pinned via `packageManager` in `package.json` and will be activated automatically.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+corepack enable          # one-time, if not already enabled
+pnpm install
+```
 
-### `npm test`
+## Environment variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The contact form needs three [EmailJS](https://www.emailjs.com/) keys. Create a `.env.local` at the repo root:
 
-### `npm run build`
+```
+REACT_APP_EMAILJS_PUBLIC_KEY=...
+REACT_APP_SERVICE_ID=...
+REACT_APP_TEMPLATE_ID=...
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In CI these are injected from GitHub Secrets (`EMAILJS_PUBLIC_KEY`, `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Scripts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Command | What it does |
+| --- | --- |
+| `pnpm start` | Run the dev server at http://localhost:3000 with hot reload |
+| `pnpm build` | Produce an optimized production bundle in `build/` |
+| `pnpm test`  | Run the CRA test runner in watch mode |
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`.github/workflows/deployHPanel.yml` runs on every push **and PR** to `main`:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Install dependencies with pnpm (frozen lockfile).
+2. Build with the EmailJS secrets injected as `REACT_APP_*` env vars.
+3. FTP-sync `build/` to Hostinger via [`SamKirkland/FTP-Deploy-Action`](https://github.com/SamKirkland/FTP-Deploy-Action).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Merging to `main` ships to production. There is no staging environment.
