@@ -1,0 +1,180 @@
+/* Design tokens — dark/light themes + 4 accents + density.
+   Switched at runtime by setting data-theme / data-accent / data-density
+   on <html>. Tailwind colors in tailwind.config.js reference these vars. */
+
+:root,
+[data-theme='dark'] {
+  --bg-page: #0b0d10;
+  --bg-panel: #121519;
+  --bg-sidebar: #0e1115;
+  --bg-elev: #181c21;
+  --bg-elev-2: #1f242a;
+  --bg-hover: #1d2228;
+  --bg-active: #232930;
+
+  --border: #23272e;
+  --border-strong: #303640;
+  --border-soft: #1a1e23;
+
+  --text: #e7e8eb;
+  --text-2: #b6bac1;
+  --muted: #7a7f87;
+  --muted-2: #5a5f66;
+
+  --accent: #7cc88f;
+  --accent-hover: #95dba6;
+  --accent-bg: rgba(124, 200, 143, 0.12);
+  --accent-border: rgba(124, 200, 143, 0.45);
+
+  --warn: #e7a55b;
+  --danger: #ef6e6e;
+
+  --syn-key: #ff8087;
+  --syn-str: #8ab4f8;
+  --syn-num: #e7a55b;
+  --syn-fn: #d2a8ff;
+  --syn-com: #6c7178;
+  --syn-tag: #7cc88f;
+  --syn-prop: #79c0ff;
+
+  --icon-md: #79c0ff;
+  --icon-json: #e7a55b;
+  --icon-yaml: #ff8087;
+  --icon-sh: #7cc88f;
+  --icon-folder: #e7a55b;
+
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.2);
+  --shadow-2: 0 12px 32px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  --tab-h: 36px;
+  --titlebar-h: 38px;
+  --statusbar-h: 26px;
+  --sidebar-w: 240px;
+}
+
+[data-theme='light'] {
+  --bg-page: #f7f5f0;
+  --bg-panel: #ffffff;
+  --bg-sidebar: #efece4;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #f4f1ea;
+  --bg-hover: #ece8de;
+  --bg-active: #e2ddd0;
+
+  --border: #d8d3c4;
+  --border-strong: #b9b3a0;
+  --border-soft: #e7e3d6;
+
+  --text: #1c1f23;
+  --text-2: #44484d;
+  --muted: #7a7569;
+  --muted-2: #9a9588;
+
+  --accent: #2f8a48;
+  --accent-hover: #246d39;
+  --accent-bg: rgba(47, 138, 72, 0.1);
+  --accent-border: rgba(47, 138, 72, 0.4);
+
+  --warn: #b9651b;
+  --danger: #b62528;
+
+  --syn-key: #b62528;
+  --syn-str: #0550ae;
+  --syn-num: #953800;
+  --syn-fn: #6639ba;
+  --syn-com: #8a8678;
+  --syn-tag: #2f8a48;
+  --syn-prop: #0550ae;
+
+  --icon-md: #0550ae;
+  --icon-json: #b9651b;
+  --icon-yaml: #b62528;
+  --icon-sh: #2f8a48;
+  --icon-folder: #b9651b;
+
+  --shadow-1: 0 1px 0 rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 12px 32px rgba(28, 31, 35, 0.1), 0 2px 4px rgba(28, 31, 35, 0.06);
+}
+
+/* Accent variants — override --accent for dark, and again for light. */
+[data-accent='amber'] {
+  --accent: #e7a55b;
+  --accent-hover: #f0bb7f;
+  --accent-bg: rgba(231, 165, 91, 0.14);
+  --accent-border: rgba(231, 165, 91, 0.5);
+}
+[data-theme='light'][data-accent='amber'] {
+  --accent: #b9651b;
+  --accent-hover: #93501a;
+  --accent-bg: rgba(185, 101, 27, 0.1);
+  --accent-border: rgba(185, 101, 27, 0.4);
+}
+[data-accent='blue'] {
+  --accent: #79b6ff;
+  --accent-hover: #9ec8ff;
+  --accent-bg: rgba(121, 182, 255, 0.14);
+  --accent-border: rgba(121, 182, 255, 0.5);
+}
+[data-theme='light'][data-accent='blue'] {
+  --accent: #0550ae;
+  --accent-hover: #043e88;
+  --accent-bg: rgba(5, 80, 174, 0.08);
+  --accent-border: rgba(5, 80, 174, 0.4);
+}
+[data-accent='magenta'] {
+  --accent: #e886c5;
+  --accent-hover: #f0a4d4;
+  --accent-bg: rgba(232, 134, 197, 0.14);
+  --accent-border: rgba(232, 134, 197, 0.5);
+}
+[data-theme='light'][data-accent='magenta'] {
+  --accent: #a83a86;
+  --accent-hover: #842c69;
+  --accent-bg: rgba(168, 58, 134, 0.1);
+  --accent-border: rgba(168, 58, 134, 0.4);
+}
+
+/* Base — applied through Tailwind's base layer reset doesn't cover these. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg-page);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'calt' 1, 'ss01' 1;
+}
+::selection {
+  background: var(--accent-bg);
+  color: var(--text);
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s, color 0.15s;
+}
+a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: currentColor;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

@@ -7,12 +7,6 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.6.2",
-    "@fortawesome/fontawesome": "^1.1.8",
-    "@fortawesome/fontawesome-free-regular": "^5.0.13",
-    "@fortawesome/fontawesome-free-solid": "^5.0.13",
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
@@ -20,13 +14,9 @@
     "@types/node": "^16.11.32",
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
-    "font-awesome": "^4.7.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-hamburger-menus": "^1.0.16",
     "react-scripts": "5.0.1",
-    "react-text-transition": "^2.0.0",
-    "react-toastify": "^9.0.4",
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
   },
@@ -53,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.5",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.4.19"
   }
 }
