@@ -1,5 +1,3 @@
 allowBuilds:
-  "@fortawesome/fontawesome-common-types": false
-  "@fortawesome/fontawesome-svg-core": false
   core-js: false
   core-js-pure: false

@@ -2,8 +2,6 @@ name: 🚀 Deploy website to Hostinger on push
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 jobs:
   web-deploy:
@@ -26,9 +24,6 @@ jobs:
       - name: 🔨 Build project
         env:
           CI: false
-          REACT_APP_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
-          REACT_APP_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          REACT_APP_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: pnpm build
       - name: 📋 List build output
         run: find build/ -print
